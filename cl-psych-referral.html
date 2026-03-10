@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macarthur CL Psychiatry Team – Referral Form</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(41, 150, 161, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-slate-500-rgb: 98, 108, 113;
+            --color-red-500-rgb: 192, 21, 47;
+            --color-red-400-rgb: 255, 84, 89;
+            --color-orange-500-rgb: 168, 75, 47;
+            --color-orange-400-rgb: 230, 129, 97;
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-btn-primary-text: var(--color-cream-50);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-teal-500);
+            --color-warning: var(--color-orange-500);
+            --color-info: var(--color-slate-500);
+            --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+            --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+            --focus-ring: 0 0 0 3px var(--color-focus-ring);
+            --focus-outline: 2px solid var(--color-primary);
+            --status-bg-opacity: 0.15;
+            --status-border-opacity: 0.25;
+            --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            --color-success-rgb: 33, 128, 141;
+            --color-error-rgb: 192, 21, 47;
+            --color-warning-rgb: 168, 75, 47;
+            --color-info-rgb: 98, 108, 113;
+            --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            --font-size-xs: 11px;
+            --font-size-sm: 12px;
+            --font-size-base: 14px;
+            --font-size-md: 14px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 20px;
+            --font-size-3xl: 24px;
+            --font-size-4xl: 30px;
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 550;
+            --font-weight-bold: 600;
+            --line-height-tight: 1.2;
+            --line-height-normal: 1.5;
+            --letter-spacing-tight: -0.01em;
+            --space-0: 0;
+            --space-1: 1px;
+            --space-2: 2px;
+            --space-4: 4px;
+            --space-6: 6px;
+            --space-8: 8px;
+            --space-10: 10px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+            --container-sm: 640px;
+            --container-md: 768px;
+            --container-lg: 1024px;
+            --container-xl: 1280px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-gray-400-rgb: 119, 124, 124;
+                --color-teal-300-rgb: 50, 184, 198;
+                --color-gray-300-rgb: 167, 169, 169;
+                --color-gray-200-rgb: 245, 245, 245;
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-primary-hover: var(--color-teal-400);
+                --color-primary-active: var(--color-teal-800);
+                --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+                --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+                --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-error: var(--color-red-400);
+                --color-success: var(--color-teal-300);
+                --color-warning: var(--color-orange-400);
+                --color-info: var(--color-gray-300);
+                --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+                --color-btn-primary-text: var(--color-slate-900);
+                --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+                --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+                --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+                --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+                --focus-ring: 0 0 0 3px var(--color-focus-ring);
+                --focus-outline: 2px solid var(--color-primary);
+                --color-success-rgb: var(--color-teal-300-rgb);
+                --color-error-rgb: var(--color-red-400-rgb);
+                --color-warning-rgb: var(--color-orange-400-rgb);
+                --color-info-rgb: var(--color-gray-300-rgb);
+            }
+            select.form-control {
+                background-image: var(--select-caret-dark);
+            }
+        }
+
+        html {
+            font-size: var(--font-size-base);
+            font-family: var(--font-family-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+        body { margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: inherit; }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            font-weight: var(--font-weight-semibold);
+            line-height: var(--line-height-tight);
+            color: var(--color-text);
+            letter-spacing: var(--letter-spacing-tight);
+        }
+        h1 { font-size: var(--font-size-4xl); }
+        h2 { font-size: var(--font-size-3xl); }
+        h3 { font-size: var(--font-size-2xl); }
+        h4 { font-size: var(--font-size-xl); }
+        p { margin: 0 0 var(--space-16) 0; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-10) var(--space-20);
+            border-radius: var(--radius-base);
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            line-height: 1.5;
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-standard);
+            border: none;
+            text-decoration: none;
+        }
+        .btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+        .btn--primary { background: var(--color-primary); color: var(--color-btn-primary-text); }
+        .btn--primary:hover { background: var(--color-primary-hover); }
+        .btn--primary:active { background: var(--color-primary-active); }
+        .btn--secondary { background: var(--color-secondary); color: var(--color-text); }
+        .btn--secondary:hover { background: var(--color-secondary-hover); }
+        .btn--secondary:active { background: var(--color-secondary-active); }
+        .btn--lg { padding: var(--space-12) var(--space-24); font-size: var(--font-size-lg); border-radius: var(--radius-md); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: var(--space-8) var(--space-12);
+            font-size: var(--font-size-md);
+            font-family: var(--font-family-base);
+            line-height: 1.5;
+            color: var(--color-text);
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            transition: border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+        }
+        .form-control:focus { border-color: var(--color-primary); outline: var(--focus-outline); }
+        select.form-control {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: var(--select-caret-light);
+            background-repeat: no-repeat;
+            background-position: right var(--space-12) center;
+            background-size: 16px;
+            padding-right: var(--space-32);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-4);
+            font-weight: var(--font-weight-semibold);
+            font-size: 15px;
+        }
+        .form-subtitle {
+            display: block;
+            font-size: var(--font-size-xs);
+            color: var(--color-text-secondary);
+            font-weight: var(--font-weight-normal);
+            font-style: italic;
+            margin-bottom: var(--space-6);
+        }
+        .form-group { margin-bottom: var(--space-20); }
+
+        .card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-card-border);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        .card__body { padding: var(--space-24); }
+
+        /* App-specific styles */
+        .app-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-24) var(--space-16);
+        }
+        .app-header {
+            text-align: center;
+            margin-bottom: var(--space-32);
+        }
+        .app-header h1 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-8);
+        }
+        .app-header p {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 19px;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-16);
+            padding-bottom: var(--space-8);
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .mse-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+        }
+        @media (max-width: 600px) {
+            .mse-grid { grid-template-columns: 1fr; }
+        }
+
+        .radio-group {
+            display: flex;
+            gap: var(--space-16);
+            align-items: center;
+            padding: var(--space-8) 0;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+            font-size: var(--font-size-md);
+            cursor: pointer;
+        }
+        .radio-group input[type="radio"] {
+            accent-color: var(--color-primary);
+            width: 16px;
+            height: 16px;
+        }
+
+        .actions {
+            display: flex;
+            gap: var(--space-12);
+            margin-top: var(--space-24);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .output-area {
+            display: none;
+            margin-top: var(--space-24);
+        }
+        .output-area.visible { display: block; }
+
+        .output-text {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            padding: var(--space-16);
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-sm);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
+            color: var(--color-text);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .copied-label {
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-success);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .copied-label.visible {
+            opacity: 1;
+        }
+
+        .success-banner {
+            display: none;
+            background: rgba(var(--color-success-rgb), var(--status-bg-opacity));
+            border: 1px solid rgba(var(--color-success-rgb), var(--status-border-opacity));
+            color: var(--color-success);
+            border-radius: var(--radius-base);
+            padding: var(--space-16);
+            margin-top: var(--space-16);
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+        }
+        .success-banner.visible { display: block; }
+
+        .warning-banner {
+            background: rgba(var(--color-warning-rgb), var(--status-bg-opacity));
+            border: 1px solid rgba(var(--color-warning-rgb), var(--status-border-opacity));
+            color: var(--color-warning);
+            border-radius: var(--radius-base);
+            padding: var(--space-16);
+            margin-bottom: var(--space-24);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+        }
+        .warning-banner strong { font-weight: var(--font-weight-bold); }
+
+        .required-star { color: var(--color-error); }
+
+        textarea.form-control { resize: vertical; min-height: 60px; }
+
+        @font-face {
+            font-family: 'FKGroteskNeue';
+            src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+        }
+    </style>
+</head>
+<body>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <h1>Macarthur CL Psychiatry Team</h1>
+            <p>Consultation-Liaison Referral Form</p>
+        </header>
+
+        <div class="warning-banner">
+            <strong>⚠️ Important:</strong> After generating the referral text below, please:
+            <br>1. <strong>Copy and paste</strong> the output into your EMR Referral (go to <strong>Orders</strong> → type <strong>"Liaison Psychiatry Consult"</strong>).
+            <br>2. <strong>Contact the CL Psychiatry team</strong> directly to notify them of the referral.
+        </div>
+
+        <form id="referralForm" autocomplete="off">
+            <!-- Request Details -->
+            <section>
+                <h3 class="section-title">Request Details</h3>
+
+                <div class="form-group">
+                    <label class="form-label" for="requestType">Request Type <span class="required-star">*</span></label>
+                    <select id="requestType" class="form-control" required>
+                        <option value="">-- Select --</option>
+                        <option value="Remote advice (phone)">Remote advice (phone)</option>
+                        <option value="In-person consult">In-person consult</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="translatorNeeded">Translator Needed?</label>
+                    <select id="translatorNeeded" class="form-control">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="translatorLangGroup" style="display:none;">
+                    <label class="form-label" for="translatorLanguage">Language Required</label>
+                    <input type="text" id="translatorLanguage" class="form-control" placeholder="e.g. Mandarin, Arabic, Vietnamese">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Patient Aware &amp; Consenting to See Psych Team? <span class="required-star">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="consent" value="Yes" required> Yes</label>
+                        <label><input type="radio" name="consent" value="No"> No</label>
+                        <label><input type="radio" name="consent" value="Unsure"> Unsure</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clinical Presentation -->
+            <section>
+                <h3 class="section-title">Clinical Presentation</h3>
+
+                <div class="form-group">
+                    <label class="form-label" for="presentation">Brief Outline of Presentation, Diagnosis &amp; Medical Plan <span class="required-star">*</span></label>
+                    <textarea id="presentation" class="form-control" rows="3" required placeholder="e.g. 47M BIBA with paracetamol overdose. Currently on NAC infusion. Should be cleared tomorrow. Nil other issues."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="mhConcerns">Detailed Description of Current Mental Health or Behavioural Concerns <span class="required-star">*</span></label>
+                    <span class="form-subtitle">Describe specific observations and behaviours, not just labels</span>
+                    <textarea id="mhConcerns" class="form-control" rows="3" required placeholder='e.g. "Patient is pacing around the ward expressing concerns about being monitored" — NOT "patient is agitated"'></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="clinicalQuestion">Clear Clinical Question for CL Psych <span class="required-star">*</span></label>
+                    <textarea id="clinicalQuestion" class="form-control" rows="2" required placeholder="e.g. Does this patient have major depressive disorder and should we consider antidepressants?"></textarea>
+                </div>
+            </section>
+
+            <!-- Mental State Examination -->
+            <section>
+                <h3 class="section-title">Mental State Examination</h3>
+                <div class="mse-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="mseAppearance">Appearance</label>
+                        <input type="text" id="mseAppearance" class="form-control" placeholder="e.g. Dishevelled, poor hygiene">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseBehaviour">Behaviour</label>
+                        <input type="text" id="mseBehaviour" class="form-control" placeholder="e.g. Cooperative, good eye contact">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseMood">Mood</label>
+                        <input type="text" id="mseMood" class="form-control" placeholder="e.g. &quot;I feel hopeless&quot;">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseAffect">Affect</label>
+                        <input type="text" id="mseAffect" class="form-control" placeholder="e.g. Flat, restricted range">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseSpeech">Speech</label>
+                        <input type="text" id="mseSpeech" class="form-control" placeholder="e.g. Normal rate/volume/tone">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseThoughtForm">Thought Form</label>
+                        <input type="text" id="mseThoughtForm" class="form-control" placeholder="e.g. Linear, goal-directed">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseThoughtContent">Thought Content</label>
+                        <input type="text" id="mseThoughtContent" class="form-control" placeholder="e.g. Denies SI/HI, nil delusions">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="msePerceptual">Perceptual Disturbance</label>
+                        <input type="text" id="msePerceptual" class="form-control" placeholder="e.g. Nil hallucinations reported">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseCognition">Cognition</label>
+                        <input type="text" id="mseCognition" class="form-control" placeholder="e.g. Orientated x3, intact attention">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseInsight">Insight</label>
+                        <input type="text" id="mseInsight" class="form-control" placeholder="e.g. Poor, denies need for treatment">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="mseJudgement">Judgement</label>
+                        <input type="text" id="mseJudgement" class="form-control" placeholder="e.g. Impaired">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Background & History -->
+            <section>
+                <h3 class="section-title">Background &amp; History</h3>
+
+                <div class="form-group">
+                    <label class="form-label" for="psychotropics">Current Psychotropic Medication(s)</label>
+                    <textarea id="psychotropics" class="form-control" rows="2" placeholder="e.g. Sertraline 100 mg mane, quetiapine 25 mg nocte PRN"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="pastPsychHx">Past Psychiatric History</label>
+                    <span class="form-subtitle">Diagnoses, hospitalisations, treatments</span>
+                    <textarea id="pastPsychHx" class="form-control" rows="2" placeholder="e.g. Hx schizophrenia, two admissions last year, on clozapine 250 mg nocte"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="medicalHx">Medical History (Non-Psychiatric)</label>
+                    <span class="form-subtitle">Active medical conditions and relevant surgical history</span>
+                    <textarea id="medicalHx" class="form-control" rows="2" placeholder="e.g. T2DM, HTN, CKD stage 3, appendicectomy 2019"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="cognitiveIssues">Cognitive Issues &amp; Testing</label>
+                    <span class="form-subtitle">Cognitive diagnoses and any formal testing results</span>
+                    <textarea id="cognitiveIssues" class="form-control" rows="2" placeholder="e.g. Hx Alzheimer's dementia, MOCA 18/30"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="drugAlcohol">Drug &amp; Alcohol History</label>
+                    <span class="form-subtitle">Recent and baseline use</span>
+                    <textarea id="drugAlcohol" class="form-control" rows="2" placeholder="e.g. Daily cannabis use, binge alcohol on weekends, nil IVDU"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="socialContext">Social Context</label>
+                    <span class="form-subtitle">Living situation, supports, functional status, recent stressors</span>
+                    <textarea id="socialContext" class="form-control" rows="2" placeholder="e.g. Lives at home with family, independent of ADLs, sister passed recently"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="interventions">Interventions Already Attempted by Treating Team</label>
+                    <span class="form-subtitle">Include allied health involvement</span>
+                    <textarea id="interventions" class="form-control" rows="2" placeholder="e.g. PRN risperidone 0.5 mg trialed with good effect, SW doing supportive counselling"></textarea>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <div class="actions">
+                <button type="submit" class="btn btn--primary btn--lg">Generate Referral Text</button>
+                <button type="button" id="clearBtn" class="btn btn--secondary btn--lg">Clear Form</button>
+            </div>
+        </form>
+
+        <!-- Output -->
+        <div id="outputArea" class="output-area">
+            <h3 class="section-title">Generated Referral Text</h3>
+            <div id="outputText" class="output-text"></div>
+            <div class="actions">
+                <button type="button" id="copyBtn" class="btn btn--primary btn--lg">📋 Copy to Clipboard</button>
+                <span id="copiedLabel" class="copied-label">✓ Copied</span>
+            </div>
+            <div id="successBanner" class="success-banner">
+                ✅ <strong>Referral text copied to clipboard.</strong>
+                <br><br>Now please:
+                <br>1. Open your EMR → <strong>Orders</strong> → type <strong>"Liaison Psychiatry Consult"</strong> → paste the referral text.
+                <br>2. <strong>Contact the Macarthur CL Psychiatry Team</strong> to notify them of the referral.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const translatorSelect = document.getElementById('translatorNeeded');
+        const translatorLangGroup = document.getElementById('translatorLangGroup');
+        translatorSelect.addEventListener('change', () => {
+            translatorLangGroup.style.display = translatorSelect.value === 'Yes' ? 'block' : 'none';
+        });
+
+        function getVal(id) {
+            const el = document.getElementById(id);
+            return el ? el.value.trim() : '';
+        }
+
+        function getRadio(name) {
+            const checked = document.querySelector(`input[name="${name}"]:checked`);
+            return checked ? checked.value : '';
+        }
+
+        function line(label, value) {
+            return value ? `${label}: ${value}` : `${label}: N/A`;
+        }
+
+        document.getElementById('referralForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const translatorVal = getVal('translatorNeeded') === 'Yes'
+                ? `Yes – ${getVal('translatorLanguage') || 'Language not specified'}`
+                : 'No';
+
+            const mseFields = [
+                line('  Appearance', getVal('mseAppearance')),
+                line('  Behaviour', getVal('mseBehaviour')),
+                line('  Mood', getVal('mseMood')),
+                line('  Affect', getVal('mseAffect')),
+                line('  Speech', getVal('mseSpeech')),
+                line('  Thought Form', getVal('mseThoughtForm')),
+                line('  Thought Content', getVal('mseThoughtContent')),
+                line('  Perceptual Disturbance', getVal('msePerceptual')),
+                line('  Cognition', getVal('mseCognition')),
+                line('  Insight', getVal('mseInsight')),
+                line('  Judgement', getVal('mseJudgement'))
+            ].join('\n');
+
+            const output = [
+                '=== REFERRAL TO MACARTHUR CL PSYCHIATRY TEAM ===',
+                '',
+                line('Request Type', getVal('requestType')),
+                line('Translator Needed', translatorVal),
+                line('Patient Aware & Consenting', getRadio('consent')),
+                '',
+                '--- Clinical Presentation ---',
+                line('Presentation / Diagnosis / Medical Plan', getVal('presentation')),
+                '',
+                line('Current MH / Behavioural Concerns', getVal('mhConcerns')),
+                '',
+                line('Clinical Question for CL Psych', getVal('clinicalQuestion')),
+                '',
+                '--- Mental State Examination ---',
+                mseFields,
+                '',
+                '--- Background & History ---',
+                line('Current Psychotropic Medications', getVal('psychotropics')),
+                line('Past Psychiatric History', getVal('pastPsychHx')),
+                line('Medical History (Non-Psychiatric)', getVal('medicalHx')),
+                line('Cognitive Issues & Testing', getVal('cognitiveIssues')),
+                line('Drug & Alcohol History', getVal('drugAlcohol')),
+                line('Social Context', getVal('socialContext')),
+                line('Interventions Attempted', getVal('interventions')),
+                '',
+                '=============================================='
+            ].join('\n');
+
+            document.getElementById('outputText').textContent = output;
+            document.getElementById('outputArea').classList.add('visible');
+            document.getElementById('successBanner').classList.remove('visible');
+            document.getElementById('copiedLabel').classList.remove('visible');
+            document.getElementById('outputArea').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        let copiedTimeout = null;
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const text = document.getElementById('outputText').textContent;
+            const copiedLabel = document.getElementById('copiedLabel');
+
+            function showCopied() {
+                if (copiedTimeout) clearTimeout(copiedTimeout);
+                copiedLabel.classList.add('visible');
+                copiedTimeout = setTimeout(() => { copiedLabel.classList.remove('visible'); }, 3000);
+                document.getElementById('successBanner').classList.add('visible');
+            }
+
+            navigator.clipboard.writeText(text).then(showCopied).catch(() => {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopied();
+                } catch (err) {
+                    alert('Could not copy. Please select the text manually and copy.');
+                }
+                document.body.removeChild(textarea);
+            });
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            document.getElementById('referralForm').reset();
+            translatorLangGroup.style.display = 'none';
+            document.getElementById('outputArea').classList.remove('visible');
+            document.getElementById('successBanner').classList.remove('visible');
+            document.getElementById('copiedLabel').classList.remove('visible');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
